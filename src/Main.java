@@ -1,15 +1,20 @@
+import Connection.CConnection;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.print.PageFormat;
-import java.awt.print.PrinterException;
-
-import static java.awt.print.Printable.NO_SUCH_PAGE;
-import static java.awt.print.Printable.PAGE_EXISTS;
-
+import java.sql.*;
 public class Main{
 
+
     public static void main (String [ ] args) {
-        JFrame frame = new FormList("My Form");
+        CConnection conn = new CConnection();
+        Connection connection = null;
+
+        try {
+            connection = conn.getConnection();
+        } catch (SQLException e) {
+            System.out.println("Error al conectar a la base de datos: " + e.getMessage());
+        }
+
+        JFrame frame = new FormList("My Form", connection);
         frame.setVisible(true);
     }
 
