@@ -7,6 +7,10 @@ public class FormList extends JFrame {
     private JButton button1;
     private JTextField textField1;
     private JPanel mainPanel;
+    private JButton button2;
+    private JTextArea textArea1;
+    private JCheckBox checkBox1;
+    private JCheckBox checkBox2;
 
 
     public FormList(String title) {
